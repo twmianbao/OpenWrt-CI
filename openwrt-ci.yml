@@ -9,14 +9,29 @@
 
 name: Raspberry 4b
 
-on:
+on: 
+
+  release:
+
+    types: [published]
+
   push:
+
     branches: 
+
       - master
-  # schedule:
-  #   - cron: 0 20 * * *
-   release:
-     types: [published]
+
+    paths:
+
+      - '2019.config'
+
+#  schedule:
+
+#    - cron: 0 8 * * 5
+
+  watch:
+
+    types: [started]
 
 jobs:
   build:
